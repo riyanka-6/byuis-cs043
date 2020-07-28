@@ -49,11 +49,11 @@ class TicTacToe:
        x_move = ' '
        if first == 0:
            while x_move not in '1 2 3 4 5 6 7 8 9'.split() or not self.board[int(x_move)] == ' ':
-               print('What is Player X\'s first move? (1-9) Note: 1 is the bottom left, 2 is the bottom center, etc.')
+               print('What is Player X\'s first move? (1-9)')
                x_move = input()
        else:
            while x_move not in '1 2 3 4 5 6 7 8 9'.split() or not self.board[int(x_move)] == ' ':
-               print('What is Player X\'s next move? (1-9) Note: 1 is the bottom left, 2 is the bottom center, etc.')
+               print('What is Player X\'s next move? (1-9)')
                x_move = input()
        return int(x_move)
 
@@ -63,11 +63,11 @@ class TicTacToe:
        o_move = ' '
        if first==1:
            while o_move not in '1 2 3 4 5 6 7 8 9'.split() or not self.board[int(o_move)] == ' ':
-               print('What is Player O\'s first move? (1-9) Note: 1 is the bottom left, 2 is the bottom center, etc.')
+               print('What is Player O\'s first move? (1-9)')
                o_move = input()
        else:
            while o_move not in '1 2 3 4 5 6 7 8 9'.split() or not self.board[int(o_move)] == ' ':
-               print('What is Player O\'s next move? (1-9) Note: 1 is the bottom left, 2 is the bottom center, etc.')
+               print('What is Player O\'s next move? (1-9)')
                o_move = input()
        return int(o_move)
 
@@ -100,7 +100,7 @@ while True:
            play.makeMove()
            if play.isWinner():
                play.drawBoard()
-               print('Hooray! Player X has won the game!')
+               print('Player X has won the game!')
                gameIsPlaying = False
                if random.randint(0, 1) == 0:
                     first = 0
@@ -126,7 +126,7 @@ while True:
            play.makeMove()
            if play.isWinner():
                play.drawBoard()
-               print('Hooray! Player O has won the game!')
+               print('Player O has won the game!')
                gameIsPlaying = False
            else:
                if play.isBoardFull():
@@ -137,5 +137,5 @@ while True:
                    first = first + 1
 
    if not play.playAgain():
-       print('I hope you guys had fun playing tic tac toe!')
+       print('Thanks for playing!')
        break
